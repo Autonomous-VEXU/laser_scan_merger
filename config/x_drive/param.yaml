@@ -2,11 +2,11 @@
 #   ros__parameters:
     # Declare laser scan topics to be subscribed here.
     # Max 9 laser scan topics
-    scan_topics: ["/scan_1", "/scan_2"]
+    scan_topics: ["/left/scan", "/right/scan"]
 
     # reliability policy ros2 topic: 0=reliable, 1=best effort
     scan_policies: [0, 0]
-    output_topic: 'scan_3'
+    output_topic: '/scan_3'
 
     # Declare the frame id for output scan, most likely base_link is appropriate.
     merged_frame_id: "base_link"
