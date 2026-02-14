@@ -54,9 +54,11 @@
 #include <limits>
 #include <execution>
 
+#include "laser_scan_merger/visibility_control.hpp"
+
 namespace util
 {
-  class LaserScanMerger : public rclcpp::Node
+  class LASER_SCAN_MERGER_PUBLIC LaserScanMerger : public rclcpp::Node
   {
   public:
     typedef pcl::PointXYZI PointT;

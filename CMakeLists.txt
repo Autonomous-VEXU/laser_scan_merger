@@ -28,6 +28,13 @@ ament_auto_add_library(${COMPONENT_NAME} SHARED ./src/laser_scan_merger.cpp)
 target_include_directories(${COMPONENT_NAME} PUBLIC include)
 rclcpp_components_register_nodes(${COMPONENT_NAME} "util::LaserScanMerger")
 
+if(MSVC)
+  target_compile_options(${COMPONENT_NAME} PRIVATE /wd4275)
+endif()
+target_compile_definitions(${COMPONENT_NAME}
+  PRIVATE "LASER_SCAN_MERGER_BUILDING_LIBRARY"
+)
+
 # install
 install(TARGETS ${COMPONENT_NAME}
   ARCHIVE DESTINATION lib
