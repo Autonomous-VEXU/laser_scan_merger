@@ -35,7 +35,7 @@ install(TARGETS ${COMPONENT_NAME}
   RUNTIME DESTINATION bin
 )
 
-install(DIRECTORY launch config rviz test
+install(DIRECTORY launch config rvizs
   DESTINATION share/${PROJECT_NAME}
 )
 
