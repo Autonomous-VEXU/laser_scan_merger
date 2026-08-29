@@ -9,7 +9,7 @@ endif()
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
-
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Default to C++23
@@ -28,7 +28,6 @@ ament_auto_add_library(${COMPONENT_NAME} SHARED ./src/laser_scan_merger.cpp)
 target_include_directories(${COMPONENT_NAME} PUBLIC include)
 rclcpp_components_register_nodes(${COMPONENT_NAME} "util::LaserScanMerger")
 
-# install
 install(TARGETS ${COMPONENT_NAME}
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
